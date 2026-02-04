@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Pro | Gaming Content Creator</title>
+    <meta name="description" content="Professional gaming content creator. Connect on YouTube, Instagram, Facebook, WhatsApp, Discord. Free Fire UID available.">
+    <meta name="keywords" content="gaming, YouTube, Instagram, Facebook, WhatsApp, Discord, Free Fire, gamer, content creator">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&family=Exo+2:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF3366; /* Gaming Pink */
+            --secondary: #3366FF; /* Electric Blue */
+            --accent: #00FFCC; /* Neon Teal */
+            --yellow: #FFCC00; /* Gold */
+            --purple: #AA66FF; /* Purple */
+            --dark-bg: #0A0F1F; /* Deep Space Blue */
+            --darker-bg: #070A17;
+            --card-bg: rgba(20, 25, 40, 0.85);
+            --card-hover: rgba(30, 35, 50, 0.95);
+            --text: #FFFFFF;
+            --text-light: #CCD6FF;
+            --shadow: rgba(51, 102, 255, 0.4);
+            --transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+            --border-radius: 18px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+            background-color: var(--dark-bg);
+        }
+
+        /* Premium Gaming Background Animation */
+        .game-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+            background: radial-gradient(ellipse at center, var(--darker-bg) 0%, #000000 100%);
+        }
+
+        /* Matrix Grid Lines */
+        .grid-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(51, 102, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(51, 102, 255, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridScroll 40s linear infinite;
+        }
+
+        @keyframes gridScroll {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+
+        /* Floating Geometry Shapes */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            border: 2px solid;
+            opacity: 0.1;
+            filter: blur(1px);
+            animation: shapeFloat 25s infinite linear;
+        }
+
+        .shape.circle {
+            border-radius: 50%;
+            border-color: var(--primary);
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .shape.triangle {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 173px solid var(--accent);
+            top: 60%;
+            right: 10%;
+            animation-delay: 5s;
+        }
+
+        .shape.square {
+            width: 150px;
+            height: 150px;
+            border-color: var(--secondary);
+            top: 20%;
+            right: 20%;
+            animation-delay: 10s;
+        }
+
+        .shape.hexagon {
+            width: 120px;
+            height: 120px;
+            background: var(--purple);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            opacity: 0.08;
+            bottom: 15%;
+            left: 15%;
+            animation-delay: 15s;
+        }
+
+        @keyframes shapeFloat {
+            0% { transform: translateY(0) rotate(0deg) scale(1); }
+            33% { transform: translateY(-50px) rotate(120deg) scale(1.1); }
+            66% { transform: translateY(30px) rotate(240deg) scale(0.9); }
+            100% { transform: translateY(0) rotate(360deg) scale(1); }
+        }
+
+        /* Particle System */
+        .particles-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            animation: particleMove linear infinite;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        @keyframes particleMove {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Laser Beams */
+        .laser-beams {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .laser {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            animation: laserScan 8s infinite linear;
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .laser-1 {
+            top: 20%;
+            width: 100%;
+            animation-delay: 0s;
+        }
+
+        .laser-2 {
+            top: 50%;
+            width: 80%;
+            left: 10%;
+            animation-delay: 2s;
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+            box-shadow: 0 0 15px var(--secondary);
+        }
+
+        .laser-3 {
+            top: 80%;
+            width: 60%;
+            left: 20%;
+            animation-delay: 4s;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        @keyframes laserScan {
+            0% { transform: translateX(-100%); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 25px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Premium Header */
+        header {
+            text-align: center;
+            padding: 60px 0 50px;
+            position: relative;
+        }
+
+        .logo-container {
+            margin: 0 auto 30px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 
+                0 0 50px rgba(255, 51, 102, 0.5),
+                0 15px 40px rgba(0, 0, 0, 0.4);
+            animation: logoPulse 4s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(var(--primary), var(--secondary), var(--accent), var(--primary));
+            animation: logoRotate 3s linear infinite;
+        }
+
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--dark-bg);
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes logoRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--primary);
+            font-weight: 800;
+            font-family: 'Orbitron', sans-serif;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 20px rgba(255, 51, 102, 0.7);
+            background: rgba(10, 15, 31, 0.7);
+        }
+
+        .channel-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--primary), var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .channel-name::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .tagline {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 30px auto 0;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.5s;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 1px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.7s; }
+        .section:nth-child(3) { animation-delay: 0.9s; }
+        .section:nth-child(4) { animation-delay: 1.1s; }
+        .section:nth-child(5) { animation-delay: 1.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--text);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 25px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .section-title::before, .section-title::after {
+            content: '✦';
+            position: absolute;
+            color: var(--accent);
+            font-size: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: spin 4s linear infinite;
+        }
+
+        .section-title::before {
+            left: 0;
+        }
+
+        .section-title::after {
+            right: 0;
+        }
+
+        @keyframes spin {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
+
+        /* Premium Link Cards */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .link-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 22px 30px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            text-decoration: none;
+            color: var(--text);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            transform: translateY(0);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.8s;
+        }
+
+        .link-card:hover {
+            background-color: var(--card-hover);
+            transform: translateY(-8px);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px var(--shadow);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .link-card:hover::before {
+            left: 100%;
+        }
+
+        .link-card.youtube {
+            border-left: 6px solid var(--primary);
+            animation: youtubeHighlight 3s infinite alternate;
+        }
+
+        @keyframes youtubeHighlight {
+            0% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+            100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 51, 102, 0.4); }
+        }
+
+        .link-card.instagram { border-left: 6px solid #E4405F; }
+        .link-card.facebook { border-left: 6px solid #1877F2; }
+        .link-card.whatsapp { border-left: 6px solid #25D366; }
+        .link-card.discord { border-left: 6px solid #5865F2; }
+
+        .link-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+        }
+
+        .link-card:hover .link-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .youtube .link-icon { 
+            background: linear-gradient(135deg, rgba(255, 51, 102, 0.15), rgba(255, 51, 102, 0.25)); 
+            color: var(--primary); 
+            box-shadow: 0 0 20px rgba(255, 51, 102, 0.3);
+        }
+        .instagram .link-icon { 
+            background: linear-gradient(135deg, rgba(228, 64, 95, 0.15), rgba(228, 64, 95, 0.25)); 
+            color: #E4405F; 
+            box-shadow: 0 0 20px rgba(228, 64, 95, 0.3);
+        }
+        .facebook .link-icon { 
+            background: linear-gradient(135deg, rgba(24, 119, 242, 0.15), rgba(24, 119, 242, 0.25)); 
+            color: #1877F2; 
+            box-shadow: 0 0 20px rgba(24, 119, 242, 0.3);
+        }
+        .whatsapp .link-icon { 
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(37, 211, 102, 0.25)); 
+            color: #25D366; 
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+        }
+        .discord .link-icon { 
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.15), rgba(88, 101, 242, 0.25)); 
+            color: #5865F2; 
+            box-shadow: 0 0 20px rgba(88, 101, 242, 0.3);
+        }
+
+        .link-content {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .link-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .link-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .link-arrow {
+            font-size: 22px;
+            opacity: 0;
+            transform: translateX(-15px);
+            transition: var(--transition);
+            z-index: 2;
+            color: var(--accent);
+        }
+
+        .link-card:hover .link-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent), var(--secondary));
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .about-text {
+            color: var(--text-light);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background: rgba(30, 35, 50, 0.5);
+            border-radius: 12px;
+            min-width: 150px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(0, 255, 204, 0.1);
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Journey Section */
+        .journey-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .journey-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--purple), var(--accent));
+        }
+
+        .journey-timeline {
+            position: relative;
+            margin-top: 30px;
+            padding-left: 30px;
+        }
+
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .timeline-year {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content {
+            font-family: 'Exo 2', sans-serif;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* Free Fire UID Section */
+        .uid-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .uid-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--yellow), var(--primary), var(--purple));
+        }
+
+        .uid-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .uid-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 30px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--yellow), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .qr-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .qr-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 220px;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            border-radius: 18px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--yellow), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 20px;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(255, 204, 0, 0.3);
+            position: relative;
+            border: 3px solid var(--accent);
+            animation: qrFloat 5s infinite ease-in-out;
+        }
+
+        @keyframes qrFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(2deg); }
+            66% { transform: translateY(10px) rotate(-2deg); }
+        }
+
+        .qr-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text);
+            font-weight: 700;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        .uid-display {
+            background: rgba(255, 204, 0, 0.1);
+            border: 2px solid rgba(255, 204, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px 35px;
+            margin-top: 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            color: var(--yellow);
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+            animation: uidGlow 2s infinite alternate;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .uid-display:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.6);
+        }
+
+        @keyframes uidGlow {
+            0% { box-shadow: 0 0 15px rgba(255, 204, 0, 0.3); }
+            100% { box-shadow: 0 0 25px rgba(255, 204, 0, 0.6); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 0 40px;
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+        }
+
+        .footer-highlight {
+            color: var(--primary);
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(30, 35, 50, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--text);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 51, 102, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .section-title {
+                font-size: 1.9rem;
+            }
+            
+            .channel-name {
+                font-size: 2.7rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 50px 0 40px;
+            }
+            
+            .logo-container {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 120px;
+                font-size: 50px;
+            }
+            
+            .channel-name {
+                font-size: 2.3rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .link-card {
+                padding: 20px 25px;
+                gap: 20px;
+            }
+            
+            .link-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+            
+            .about-section, .journey-section, .uid-section {
+                padding: 30px;
+            }
+            
+            .qr-code {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .uid-display {
+                font-size: 1.5rem;
+                padding: 18px 30px;
+            }
+            
+            .stats-container {
+                gap: 15px;
+            }
+            
+            .stat-box {
+                min-width: 130px;
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .channel-name {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+                margin-top: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .link-title {
+                font-size: 1.3rem;
+            }
+            
+            .qr-container {
+                gap: 30px;
+            }
+            
+            .qr-code {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .about-text, .timeline-content {
+                font-size: 1rem;
+            }
+            
+            .uid-display {
+                font-size: 1.3rem;
+                padding: 15px 25px;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Premium Gaming Background -->
+    <div class="game-background">
+        <div class="grid-lines"></div>
+        <div class="floating-shapes">
+            <div class="shape circle"></div>
+            <div class="shape triangle"></div>
+            <div class="shape square"></div>
+            <div class="shape hexagon"></div>
+        </div>
+        <div class="particles-container" id="particles"></div>
+        <div class="laser-beams">
+            <div class="laser laser-1"></div>
+            <div class="laser laser-2"></div>
+            <div class="laser laser-3"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+              <div class="logo">
+<img src= "C:\Users\Admin\Downloads\logo.png" alt="logo" style="height: 150px;">
+</div>  
+            </div>
+            <h1 class="channel-name">Siya_snipes_live</h1>
+            <p class="tagline">Professional Gaming Content Creator • Esports Enthusiast • Community Leader</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Social Media Links Section -->
+        <section class="section">
+            <h2 class="section-title">CONNECT WITH ME</h2>
+            <div class="links-container">
+                <!-- YouTube Link -->
+                <a href="https://youtube.com/@siya_snipes_live?si=_rfOy7htYq8ASUMs" target="_blank" class="link-card youtube">
+                    <div class="link-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">YouTube Channel</div>
+                        <div class="link-subtitle">High-quality gameplay, tutorials & live streams</div>
+                    </div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <!-- Instagram Link -->
+                <a href=https://www.instagram.com/siya_snipes_live?igsh=Mm9xbDhkZ2NnMG5i target="_blank" class="link-card instagram">
+                    <div class="link-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Instagram</div>
+                        <div class="link-subtitle">Daily gaming content, reels & behind the scenes</div>
+                    </div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <!-- Facebook Link -->
+                <a href="https://www.facebook.com/share/14U1upbzZi1/" target="_blank" class="link-card facebook">
+                    <div class="link-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Facebook Page</div>
+                        <div class="link-subtitle">Community updates, events & gaming discussions</div>
+                    </div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <!-- WhatsApp Link -->
+                <a href="https://whatsapp.com/channel/0029VbBAIgK1NCrS7K6Ba70d" target="_blank" class="link-card whatsapp">
+                    <div class="link-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">WhatsApp Channel</div>
+                        <div class="link-subtitle">Exclusive updates, announcements & early access</div>
+                    </div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <!-- Discord Link -->
+                <a href="https://discord.gg/GMmECzGDq6" target="_blank" class="link-card discord">
+                    <div class="link-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Discord Server</div>
+                        <div class="link-subtitle">Join 10K+ gamers for tournaments & community chat</div>
+                    </div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section">
+            <h2 class="section-title">ABOUT ME</h2>
+            <div class="about-section">
+                <div class="about-content">
+                    <p class="about-text">
+                        My self <span class="highlight">SIYA. A gaming content creator</span> focused on <span class="highlight">Free Fire</span>, creating high-energy live streams and engaging gaming content on <span class="highlight">YouTube and Instagram</span>. My content is built around real gameplay, competitive matches, and interactive sessions where viewers don’t just watch — they become part of the action.
+                    </p>
+                    
+                    <p class="about-text">
+                        I regularly go live to <span class="highlight">push rank</span>, play <span class="highlight">squad matches</span>, and host <span class="highlight">Free Fire custom rooms and tournaments</span>. These tournaments are organized for my community so players can compete, showcase their skills, and win real rewards. I also run <span class="highlight">giveaways</span>, where winners receive <span class="highlight">cash rewards through UPI </span>instead of in-game items, making every victory more meaningful.
+                    </p>
+                    
+                    <p class="about-text">
+               My goal is to build a <span class="highlight">strong Free Fire gaming community</span> where players enjoy <span class="highlight">competitive gameplay , fair tournaments</span>, and <span class="highlight">exciting live streams in a positive environment</span>, and as this journey grows, the platform will keep upgrading with bigger streams, better tournaments, and stronger community experiences to create a gaming brand that players can truly be proud of.         
+                    </p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">YouTube Subscribers</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">2900+</div>
+                            <div class="stat-label">Instagram Followers</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Hours Streamed</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section class="section">
+            <h2 class="section-title">MY JOURNEY</h2>
+            <div class="journey-section">
+                <div class="journey-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">Started learning Graphic Designing and Website Development.
+Created digital designs and websites for personal projects and practice.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">Entered the world of 3D Modeling & 3D Animation.
+Began creating high-quality 3D visuals, logos, and animated content.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">Combined Web + Design + 3D to build complete digital experiences.
+Worked on brand visuals, thumbnails, posters, and animated media.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-content">Started Content Creation on YouTube and Instagram.
+Sharing my work, designs, 3D animations, and creative journey with the public.
+Building my personal brand through consistent content.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2027 - Coming Soon</div>
+                        <div class="timeline-content">Expanding my Free Fire live streams, growing my gaming community, and building my presence across YouTube, Instagram, and Facebook.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2028 - Coming Soon</div>
+                        <div class="timeline-content">Launching large-scale Free Fire eSports tournaments and establishing a powerful gaming brand in the esports industry.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <!-- Free Fire UID Section -->
+<section class="section">
+    <h2 class="section-title">FREE FIRE CONNECT</h2>
+    <div class="uid-section">
+        <div class="uid-content">
+            <h3 class="uid-title">ADD ME IN FREE FIRE</h3>
+            
+            <div class="uid-display" id="uidDisplay">
+                6888535648
+            </div>
+            
+            <p class="about-text" style="margin-top: 25px; max-width: 600px;">
+                Copy my UID to add me in Free Fire. Let's play together, share strategies, and rank up in competitive matches!
+            </p>
+        </div>
+    </div>
+</section> 
+
+        <!-- QR Codes Section - Added at the bottom -->
+        <section class="section">
+            <h2 class="section-title">SCAN & CONNECT</h2>
+            <div class="uid-section">
+                <div class="uid-content">
+                    <h3 class="uid-title">MY QR CODES</h3>
+                    
+                    <div class="qr-container">
+                        <!-- Free Fire UID QR Code -->
+                        <div class="qr-box">
+                            <div class="qr-code">
+                                <!-- Replace this placeholder with your Free Fire UID QR code -->
+                                <img src="C:\Users\Admin\Desktop\uid.jpeg" alt="Free Fire UID QR Code" width="150" height="150" style="border-radius: 12px;">
+                            </div>
+                            <div class="qr-label">Free Fire UID QR</div>
+                        </div>
+                        
+                        <!-- PhonePe QR Code -->
+                        <div class="qr-box">
+                            <div class="qr-code">
+                                <!-- Replace this placeholder with your PhonePe QR code -->
+                                <img src="C:\Users\Admin\Desktop\phonepay.jpeg" alt="PhonePe QR Code" width="150" height="150" style="border-radius: 12px;">
+                            </div>
+                            <div class="qr-label">PhonePe QR</div>
+                        </div>
+                    </div>
+                    
+                    <p class="about-text" style="margin-top: 25px; max-width: 600px;">
+                        Scan the QR codes to add me in Free Fire or use PhonePe for support. Both codes are regularly updated and verified.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Professional Gaming Content Creator <span class="footer-highlight">•</span> Esports Enthusiast <span class="footer-highlight">•</span> Community Builder</p>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+            </div>
+            
+            <p style="margin-top: 25px;">&copy; <span id="currentYear"></span> siya_snipes_live. All rights reserved.Powered by C.B.A</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">🥰Designed for S I Y A 💕, by Srishti Sau 🔥🎮</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Create particle system
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 40;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Random size between 2px and 6px
+            const size = Math.random() * 4 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Random position
+            particle.style.left = `${Math.random() * 100}vw`;
+            
+            // Random animation duration between 15s and 30s
+            const duration = Math.random() * 15 + 15;
+            particle.style.animationDuration = `${duration}s`;
+            
+            // Random delay
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            
+            // Random color
+            const colors = ['#FF3366', '#3366FF', '#00FFCC', '#FFCC00', '#AA66FF'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.backgroundColor = color;
+            particle.style.boxShadow = `0 0 10px ${color}`;
+            
+            particlesContainer.appendChild(particle);
+        }
+        
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    
+                    // Add special effect for timeline items
+                    if (entry.target.classList.contains('timeline-item')) {
+                        entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Observe timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // UID Copy functionality with enhanced feedback
+        const uidDisplay = document.getElementById('uidDisplay');
+        if (uidDisplay) {
+            uidDisplay.addEventListener('click', function() {
+                const uid = this.textContent.trim();
+                navigator.clipboard.writeText(uid).then(() => {
+                    const originalText = this.textContent;
+                    const originalColor = this.style.color;
+                    
+                    // Visual feedback
+                    this.textContent = 'COPIED!';
+                    this.style.color = '#00FFCC';
+                    this.style.background = 'rgba(0, 255, 204, 0.1)';
+                    this.style.borderColor = '#00FFCC';
+                    
+                    // Create confirmation effect
+                    const checkIcon = document.createElement('i');
+                    checkIcon.className = 'fas fa-check';
+                    checkIcon.style.marginLeft = '10px';
+                    this.appendChild(checkIcon);
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.color = originalColor;
+                        this.style.background = '';
+                        this.style.borderColor = '';
+                        checkIcon.remove();
+                    }, 2000);
+                });
+            });
+            
+            // Add tooltip
+            uidDisplay.title = "Click to copy UID";
+        }
+
+        // Add click animation to link cards
+        document.querySelectorAll('.link-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Prevent default for demo
+                e.preventDefault();
+                
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size/2;
+                const y = e.clientY - rect.top - size/2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.2);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${size}px;
+                    height: ${size}px;
+                    top: ${y}px;
+                    left: ${x}px;
+                    pointer-events: none;
+                    z-index: 1;
+                `;
+                
+                this.appendChild(ripple);
+                
+                // Remove ripple after animation
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+                
+                // Simulate link opening after animation
+                setTimeout(() => {
+                    const url = this.getAttribute('href');
+                    if (url && url !== '#') {
+                        window.open(url, '_blank');
+                    }
+                }, 300);
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add floating gaming icons on scroll
+        let lastScrollY = window.scrollY;
+        const floatingIcons = ['🎮', '🔥', '⚡', '🏆', '💥', '🎯', '✨', '🌟'];
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            // Create floating icon occasionally
+            if (currentScrollY > lastScrollY && Math.random() > 0.97) {
+                const icon = document.createElement('div');
+                icon.textContent = floatingIcons[Math.floor(Math.random() * floatingIcons.length)];
+                icon.style.cssText = `
+                    position: fixed;
+                    font-size: ${Math.random() * 25 + 15}px;
+                    right: ${Math.random() * 50 + 10}px;
+                    top: ${currentScrollY + window.innerHeight}px;
+                    z-index: 0;
+                    opacity: 0;
+                    animation: floatUpIcon 3s forwards;
+                    pointer-events: none;
+                    user-select: none;
+                `;
+                
+                document.body.appendChild(icon);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    icon.remove();
+                }, 3000);
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+
+        // Add CSS for floatUpIcon animation
+        const floatStyle = document.createElement('style');
+        floatStyle.textContent = `
+            @keyframes floatUpIcon {
+                0% {
+                    opacity: 0;
+                    transform: translateY(0) rotate(0deg);
+                }
+                10% {
+                    opacity: 0.7;
+                }
+                90% {
+                    opacity: 0.7;
+                }
+                100% {
+                    opacity: 0;
+                    transform: translateY(-150px) rotate(180deg);
+                }
+            }
+        `;
+        document.head.appendChild(floatStyle);
+
+        // Add keyboard gaming effect
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                const keyEffect = document.createElement('div');
+                keyEffect.style.cssText = `
+                    position: fixed;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    background: radial-gradient(circle, rgba(255, 51, 102, 0.2) 0%, transparent 70%);
+                    border: 2px solid rgba(255, 51, 102, 0.3);
+                    pointer-events: none;
+                    z-index: 1000;
+                    left: ${Math.random() * 80 + 10}vw;
+                    top: ${Math.random() * 80 + 10}vh;
+                    animation: keyEffect 0.8s forwards;
+                `;
+                
+                document.body.appendChild(keyEffect);
+                
+                setTimeout(() => {
+                    keyEffect.remove();
+                }, 800);
+            }
+        });
+
+        // Add CSS for keyEffect animation
+        const keyStyle = document.createElement('style');
+        keyStyle.textContent = `
+            @keyframes keyEffect {
+                0% { transform: scale(0); opacity: 1; }
+                100% { transform: scale(2); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(keyStyle);
+    </script>
+</body>
+</html>
